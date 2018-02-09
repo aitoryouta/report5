@@ -36,10 +36,24 @@ public class LivingThing {
     public void attack(LivingThing naltoma) {
         if(hitPoint >= 0) {
             int damage = (int) (Math.random() * attack);
-           System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name,naltoma.getName(), damage);
+            int Critical= (int) (Math.random() * 10);
+
+            if (isDead()) {
+                damage = 0;
+                System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n", getName(), naltoma.getName());
+            }else if(damage==0){
+                System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n", getName(), naltoma.getName());
+            }else if(Critical <= 3){
+                damage = damage*2;
+                System.out.printf("%sの攻撃！痛恨の一撃！！%sに%dのダメージを与えた！！\n", getName(), naltoma.getName(), damage);
+            }else{
+                System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", getName(), naltoma.getName(), damage);
+            }
             naltoma.wounded(damage);
         }
     }
+
+
     public void wounded(int damage){
         hitPoint -= damage;
         if( hitPoint < 0 ) {

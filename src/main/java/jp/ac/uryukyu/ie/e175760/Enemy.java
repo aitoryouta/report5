@@ -19,6 +19,4 @@ public class Enemy extends LivingThing {
             setDead(true);
             System.out.printf("モンスター%sは倒れた。\n", name);
         }
-    }
-
-}
+    }}
