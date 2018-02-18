@@ -40,7 +40,6 @@ public class LivingThing {
             int Critical= (int) (Math.random() * 10);
             if (dead) {
                 damage = 0;
-                System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, naltoma.getName(), damage);
             }else if(Critical <= 3) {
                 damage = damage * 2;
                 System.out.printf("%sの攻撃！会心の一撃！！%sに%dのダメージを与えた！！\n", name, naltoma.getName(), damage);

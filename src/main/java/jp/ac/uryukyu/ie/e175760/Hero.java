@@ -17,7 +17,7 @@ public class Hero extends LivingThing{
         if (isDead()) {
             damage = 0;
             System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n", getName(), naltoma.getName());
-        }else if(damage==0){
+        }else if(damage==0) {
             System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n", getName(), naltoma.getName());
         }else if(Critical <= 2){
             damage = damage*2;
